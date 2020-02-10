@@ -18,7 +18,7 @@ import com.dsu.integrationassignment.model.Game;
 @Path("gameservice")
 @Consumes("application/xml")
 @Produces("application/xml")
-public interface GameService {
+public interface GameService{
 	
 	@GET
 	@Path("/game")
@@ -28,9 +28,14 @@ public interface GameService {
 	@Path("/game/{id}")
 	Game searchGameById(@PathParam("id") long id);
 	
+	@GET
+	@Path("/game/{category}")
+	List<Game> searchByCategory(@PathParam("category") String category);
+	
 	@POST
 	@Path("/game")
 	void addGame(Game game);
+	
 	
 	@DELETE
 	@Path("/game")

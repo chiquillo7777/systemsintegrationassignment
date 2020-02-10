@@ -46,4 +46,24 @@ public class GameServiceImpl implements GameService {
 		return null;
 	}
 
+	@Override
+	public List<Game> searchByCategory(String category) {
+		Collection<Game> results = games.values();
+		List<Game> response = new ArrayList<>(results);
+		List<Game> responseResults = null;
+		
+		for(Game game : response) {
+			if(game.getCategory() == "test") {
+				int key = (int) game.getId();
+				responseResults = (List<Game>) response.get(key);
+			}else {
+				System.out.println("NO JUNCIONO BB");
+			}
+			
+		}
+		
+		
+		return responseResults;
+	}
+
 }
