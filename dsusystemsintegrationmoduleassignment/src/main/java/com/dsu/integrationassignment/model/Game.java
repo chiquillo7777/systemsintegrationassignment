@@ -1,41 +1,17 @@
 package com.dsu.integrationassignment.model;
 
+import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Game {
 	private long id;
 	private String name;
-	private String gameProducer;
-	private String category;
-	private String characterName;
-	private String role;
-	private String url;
-
+	private String gameproducer;
+	private List<String> category;
+	private Character character;
 	
-	public String getCharacterName() {
-		return characterName;
-	}
-
-	public void setCharacterName(String characterName) {
-		this.characterName = characterName;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
+	
 
 	public long getId() {
 		return id;
@@ -53,20 +29,31 @@ public class Game {
 		this.name = name;
 	}
 
-	public String getGameProducer() {
-		return gameProducer;
+
+	public String getGameproducer() {
+		return gameproducer;
 	}
 
-	public void setGameProducer(String gameProducer) {
-		this.gameProducer = gameProducer;
+	public void setGameproducer(String gameproducer) {
+		this.gameproducer = gameproducer;
 	}
 
-	public String getCategory() {
+	public List<String> getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(List<String> category) {
 		this.category = category;
 	}
+
+	public Character getCharacter() {
+		return character;
+	}
+
+	public void setCharacter(Character character) {
+		this.character = character;
+	}
+
+	
 
 }

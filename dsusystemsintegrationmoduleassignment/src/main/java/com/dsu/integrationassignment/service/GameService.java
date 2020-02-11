@@ -6,6 +6,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -25,7 +26,7 @@ public interface GameService{
 	List<Game> searchAll();
 	
 	@GET
-	@Path("/game/{id}")
+	@Path("/game/id/{id}")
 	Game searchGameById(@PathParam("id") long id);
 	
 	@GET
@@ -40,4 +41,10 @@ public interface GameService{
 	@DELETE
 	@Path("/game")
 	Response deleteGame(@QueryParam("id") long id);
+	
+	@PUT
+	@Path("game")
+	void updateGameById(@QueryParam("id") Long id, Game game);
+	
+	List<Character> 
 }
