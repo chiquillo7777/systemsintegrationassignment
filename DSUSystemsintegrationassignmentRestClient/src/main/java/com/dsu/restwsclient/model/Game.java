@@ -5,7 +5,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
-@XmlRootElement(name="game")
+@XmlRootElement(name="Game")
 public class Game {
 	private long id;
 	private String name;
