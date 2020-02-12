@@ -41,15 +41,15 @@ public interface GameService{
 	
 	
 	@DELETE
-	@Path("/game")
-	Response deleteGame(@QueryParam("id") long id);
+	@Path("/game/{id}")
+	Response deleteGame(@PathParam("id") long id);
 	
 	@PUT
-	@Path("/game")
-	void updateGameById(@QueryParam("id") Long id, Game game);
+	@Path("/game/{id}")
+	void updateGameById(@PathParam("id") Long id, Game game);
 	
 	@GET
-	@Path("/game/{id}")
+	@Path("/game/{id}/characters")
 	List<Character> mainCharactersPerGame(@PathParam("id") Long id );
 	
 	

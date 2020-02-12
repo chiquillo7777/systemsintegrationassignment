@@ -11,7 +11,7 @@ public class Game {
 	private String name;
 	private String gameproducer;
 	private List<String> category;
-	private List<Character> character;
+	private List<Character> characters;
 	
 	
 
@@ -48,13 +48,15 @@ public class Game {
 		this.category = category;
 	}
 
-	public List<Character> getCharacter() {
-		return character;
+	public List<Character> getCharacters() {
+		return characters;
 	}
 
-	public void setCharacter(List<Character> character) {
-		this.character = character;
+	public void setCharacters(List<Character> characters) {
+		this.characters = characters;
 	}
+
+	
 
 
 

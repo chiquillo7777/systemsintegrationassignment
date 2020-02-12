@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.ws.rs.core.Response;
 
@@ -35,7 +36,7 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public void addGame(Game game) {
-		Game newGame = new Game();
+		//Game newGame = new Game();
 		
 		//newGame.setId(++id);
 		//newGame.setName(game.getName());
@@ -46,9 +47,10 @@ public class GameServiceImpl implements GameService {
 		//newGame.setRole(game.getRole());
 		//newGame.setUrl(game.getUrl());
 		
-		game.setId(id++);
+		game.setId(id);
 		
-		games.put(id++, game);
+		games.put(id, game);
+		id++;
 
 	}
 
@@ -60,69 +62,59 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public Response deleteGame(long id) {
-		if (games.get(id) != null) {
+		
 			games.remove(id);
-		}
+		
 		return null;
 	}
 
 	@Override
 	public List<Game> searchByCategory(String category) {
 		
-		List<Game> listOfGames = new ArrayList<>();
 		
-		/* games.values().forEach(
-		            (e -> {
-		                if (e.getCategory() == category) {
-		                	Game test = new Game();
-		                	test= e;
-		                	System.out.println(test);
-		                	listOfGames.add(test);
-		                } 
-		            }
-		    ));*/
+		
+		List<Game> listOfGames = new ArrayList<>();
+	
 		
 		for(Game game : games.values()) {
-			
-			System.out.println(game.getCategory());
-			if(game.getCategory().equals(category)) {
+			int i =0;
+			System.out.println(game.getCategories());
+			if(game.getCategories().get(i).equals(category)) {
 				listOfGames.add(game);
-				System.out.println(listOfGames.get(0));
+				System.out.println(listOfGames.get(i));
 			}
-			
+			i++;
 		}
 		
 		
 	
-
+		
 		return listOfGames;
 	}
 
 	@Override
 	public void updateGameById(Long id, Game game) {
 		System.out.println(id);
-		if (games.get(id) != null) {
+		if (id != null) {
 			game.setId(id);
 			games.remove(id);
 			games.put(id, game);
 		}
+		int x=4;
 	}
 
 	@Override
 	public List<Character> mainCharactersPerGame(Long id) {
-		List<Character> characters = new ArrayList<>();
-		/*for(Game game : games.values()) {
-			if(id != null) {
-				characters.addAll(game.getCharacter());
-			}
-		}*/
-		
-		if(id!= null) {
-			characters = games.get(id).getCharacter();
-			
+		List<Game> gameList = new ArrayList<>();
+		for(Game game: games.values()) {
+			gameList.add(game);
 		}
 		
-		return characters;
+		for(Game e : gameList) {
+			System.out.println(e + "test");
+		}
+		
+		return null;
 	}
 
 }

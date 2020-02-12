@@ -1,9 +1,6 @@
-package com.dsu.integrationassignment.model;
+package jerseyws.model;
 
 import java.util.List;
-
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlList;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -11,13 +8,9 @@ public class Game {
 	private long id;
 	private String name;
 	private String gameproducer;
-	private List<String> categories;
-	//@XmlElement(type = Character.class)
-	private List<Character> characters;
+	private List<String> category;
+	private List<Character> character;
 	
-	
-	
-
 	
 
 	public long getId() {
@@ -45,25 +38,21 @@ public class Game {
 		this.gameproducer = gameproducer;
 	}
 
-	public List<String> getCategories() {
-		return categories;
+	public List<String> getCategory() {
+		return category;
 	}
 
-	public void setCategories(List<String> categories) {
-		this.categories = categories;
+	public void setCategory(List<String> category) {
+		this.category = category;
 	}
 
-	public List<Character> getCharacters() {
-		return characters;
+	public List<Character> getCharacter() {
+		return character;
 	}
 
-	public void setCharacters(List<Character> characters) {
-		this.characters = characters;
+	public void setCharacter(List<Character> character) {
+		this.character = character;
 	}
-
-	
-
-	
 
 
 

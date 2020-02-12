@@ -1,11 +1,13 @@
 
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.WebTarget;
 
-import com.dsu.restwsclient.model.Game;
 
 public class GameWSClient {
 
@@ -13,10 +15,9 @@ public class GameWSClient {
 		Client client = ClientBuilder.newClient();
 		WebTarget target = client.target("http://localhost:8080/api/services/gameservice/game");
 		Builder request = target.request();
-		Game game =  request.get(Game.class);
-		
-		
-		System.out.println(game.getName());
+		String response =  request.get(String.class);
+				
+		System.out.println(response);
 		
 		
 		

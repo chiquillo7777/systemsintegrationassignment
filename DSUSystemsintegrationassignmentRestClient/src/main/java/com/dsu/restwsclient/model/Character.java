@@ -2,7 +2,7 @@ package com.dsu.restwsclient.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="character")
+@XmlRootElement(name="Character")
 public class Character {
 	private String name;
 	private String rol;

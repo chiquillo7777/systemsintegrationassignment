@@ -1,8 +1,8 @@
-package com.dsu.integrationassignment.model;
+package jerseyws.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="character")
+@XmlRootElement
 public class Character {
 	private String name;
 	private String rol;
