@@ -9,11 +9,11 @@
 		<version>2.2.4.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.dsu.integrationassignment</groupId>
-	<artifactId>dsusystemsintegrationmoduleassignment</artifactId>
+	<groupId>com.dsu.restwsclient</groupId>
+	<artifactId>DSUSystemsintegrationassignment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dsusystemsintegrationmoduleassignment</name>
-	<description>DSU System Integration module assignment</description>
+	<name>DSUSystemsintegrationassignment</name>
+	<description>Systems integration assigment Rest WS Client</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -27,23 +27,15 @@
 
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
+			<artifactId>cxf-rt-rs-client</artifactId>
 			<version>3.3.5</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-jaxrs</artifactId>
-			<version>1.9.13</version>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			
 		</dependency>
-
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-xc</artifactId>
-			<version>1.9.13</version>
-		</dependency>
-
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -1,4 +1,6 @@
 package com.dsu.integrationassignment.service;
+import com.dsu.integrationassignment.model.*;
+import com.dsu.integrationassignment.model.Character;
 
 import java.util.List;
 
@@ -13,13 +15,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 
-import com.dsu.integrationassignment.model.Game;
-
 
 @Path("gameservice")
-@Consumes("application/xml")
-@Produces("application/xml")
+@Consumes("application/xml,application/json")
+@Produces("application/xml,application/json")
 public interface GameService{
+	
+	
 	
 	@GET
 	@Path("/game")
@@ -43,8 +45,12 @@ public interface GameService{
 	Response deleteGame(@QueryParam("id") long id);
 	
 	@PUT
-	@Path("game")
+	@Path("/game")
 	void updateGameById(@QueryParam("id") Long id, Game game);
 	
-	List<Character> 
+	@GET
+	@Path("/game/{id}")
+	List<Character> mainCharactersPerGame(@PathParam("id") Long id );
+	
+	
 }

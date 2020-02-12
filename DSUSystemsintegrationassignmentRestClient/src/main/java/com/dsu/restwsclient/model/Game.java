@@ -1,9 +1,11 @@
-package com.dsu.integrationassignment.model;
+package com.dsu.restwsclient.model;
 
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+
+@XmlRootElement(name="game")
 public class Game {
 	private long id;
 	private String name;

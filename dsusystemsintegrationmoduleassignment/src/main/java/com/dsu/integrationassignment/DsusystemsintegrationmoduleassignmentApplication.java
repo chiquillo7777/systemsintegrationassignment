@@ -9,11 +9,11 @@ public class DsusystemsintegrationmoduleassignmentApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DsusystemsintegrationmoduleassignmentApplication.class, args);
 		
-		String texto1 = "war";
-		String texto2 = "war";
+		//String texto1 = "war";
+		//String texto2 = "war";
 		
-		System.out.println("Iguales? " + texto1.equals(texto2));
-		System.out.println("Iguales? " + texto1 == texto2);
+		//System.out.println("Iguales? " + texto1.equals(texto2));
+		//System.out.println("Iguales? " + texto1 == texto2);
 		
 		//===
 	}

@@ -1,5 +1,6 @@
 package com.dsu.integrationassignment.service;
 
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -13,6 +14,7 @@ import javax.ws.rs.core.Response;
 
 import org.springframework.stereotype.Service;
 
+import com.dsu.integrationassignment.model.Character;
 import com.dsu.integrationassignment.model.Game;
 
 @Service
@@ -35,18 +37,18 @@ public class GameServiceImpl implements GameService {
 	public void addGame(Game game) {
 		Game newGame = new Game();
 		
-		newGame.setId(++id);
-		newGame.setName(game.getName());
-		newGame.setGameproducer(game.getGameproducer());
-		newGame.setCategory(game.getCategory());
-		newGame.setCharacter(game.getCharacter());
+		//newGame.setId(++id);
+		//newGame.setName(game.getName());
+		//newGame.setGameproducer(game.getGameproducer());
+		//newGame.setCategory(game.getCategory());
+		//newGame.setCharacter(game.getCharacter());
 		//newGame.setCharactername(game.getCharactername());
 		//newGame.setRole(game.getRole());
 		//newGame.setUrl(game.getUrl());
 		
+		game.setId(id++);
 		
-		
-		games.put(newGame.getId(), newGame);
+		games.put(id++, game);
 
 	}
 
@@ -91,32 +93,7 @@ public class GameServiceImpl implements GameService {
 		}
 		
 		
-		/*Iterator<Map.Entry<Long, Game>> it =  games.entrySet().iterator();
-		Map.Entry<Long, Game> entry = it.next();
-		System.out.println("Before while");
-		
-		while (it.hasNext()) {
-			System.out.println("In the while");
-			Game game =  entry.getValue();
-			if (game.getCategory() == category) {
-				
-				System.out.println("In the if");
-				listOfGames.add(game);
-				System.out.println("");
-			}else {
-				System.out.println("in the else");
-				break;
-			}
-		}*/
-		
-		/*Set<Map.Entry<Long, Game>> entrySet = games.entrySet();
-		
-		
-		for (Entry<Long, Game> entry : entrySet) {
-			if(entry.getValue().getCategory()==category) {
-				listOfGames.add(entry.);
-			}
-		}*/
+	
 
 		return listOfGames;
 	}
@@ -129,6 +106,23 @@ public class GameServiceImpl implements GameService {
 			games.remove(id);
 			games.put(id, game);
 		}
+	}
+
+	@Override
+	public List<Character> mainCharactersPerGame(Long id) {
+		List<Character> characters = new ArrayList<>();
+		/*for(Game game : games.values()) {
+			if(id != null) {
+				characters.addAll(game.getCharacter());
+			}
+		}*/
+		
+		if(id!= null) {
+			characters = games.get(id).getCharacter();
+			
+		}
+		
+		return characters;
 	}
 
 }
